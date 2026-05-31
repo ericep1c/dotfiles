@@ -1,0 +1,16 @@
+#!/bin/bash
+# wallust unit for themesw
+
+# Get current wallpaper from cache
+WALLPAPER="$HOME/.cache/current_wallpaper.jpg"
+
+if [[ ! -f "$WALLPAPER" ]]; then
+    # Fallback if cache doesn't exist
+    WALLPAPER="$HOME/Downloads/wallpaper.jpg"
+fi
+
+if [[ $1 == "light" ]]; then
+    wallust run -p saliencelight "$WALLPAPER"
+else
+    wallust run -p saliencedark "$WALLPAPER"
+fi

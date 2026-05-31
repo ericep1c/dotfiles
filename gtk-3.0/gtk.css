@@ -1,0 +1,112 @@
+@import url("../waybar/colors.css");
+
+/* Global GTK3 styling for Thunar and others */
+
+* {
+    outline-width: 0;
+}
+
+/* Match Kitty's background: Pure Black at 0.8 opacity */
+@define-color kitty_bg alpha(#000000, 0.8);
+
+window.thunar,
+.thunar,
+.thunar-window {
+    background-color: @kitty_bg;
+}
+
+/* Thunar Side Pane */
+.sidebar,
+.sidebar list,
+.sidebar row,
+.sidebar treeview {
+    background-color: @kitty_bg;
+    color: @foreground;
+}
+
+.sidebar row:selected {
+    background-color: alpha(@color4, 0.3);
+    color: @foreground;
+    border-radius: 6px;
+}
+
+/* Thunar Main View */
+standard-view,
+standard-view list,
+standard-view row,
+.view,
+.view list,
+.view row {
+    background-color: @kitty_bg;
+    color: @foreground;
+}
+
+standard-view row:selected {
+    background-color: alpha(@color4, 0.2);
+    color: @foreground;
+    border-radius: 6px;
+}
+
+/* Headerbar and Toolbar */
+headerbar,
+toolbar {
+    background-color: @kitty_bg;
+    border-bottom: 1px solid alpha(@color4, 0.1);
+}
+
+/* Thunar Pathbar (Breadcrumbs) */
+.location-bar {
+    background-color: transparent;
+    padding: 4px;
+}
+
+.location-bar button {
+    background-image: none;
+    background-color: alpha(@color0, 0.5);
+    border: 1px solid alpha(@color4, 0.1);
+    border-radius: 8px;
+    margin: 2px;
+    padding: 4px 8px;
+    color: @foreground;
+}
+
+.location-bar button:checked {
+    background-color: @color4;
+    color: @background;
+}
+
+.location-bar button:hover {
+    background-color: alpha(@color4, 0.3);
+}
+
+/* Status Bar */
+statusbar {
+    background-color: @kitty_bg;
+    color: alpha(@foreground, 0.7);
+    padding: 4px;
+    font-size: 0.9em;
+}
+
+/* Menubar */
+menubar,
+.menubar {
+    background-color: @kitty_bg;
+    color: @foreground;
+}
+
+/* Notebook tabs */
+notebook tab {
+    background-color: @kitty_bg;
+    color: alpha(@foreground, 0.5);
+}
+
+notebook tab:checked {
+    background-color: @kitty_bg;
+    color: @foreground;
+    border-top: 2px solid @color4;
+}
+
+/* General window borders */
+window {
+    border-radius: 12px;
+}

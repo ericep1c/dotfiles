@@ -1,0 +1,9 @@
+[general]
+[input]
+method = pipewire
+source = auto
+[output]
+method = ncurses
+[color]
+[smoothing]
+[eq]

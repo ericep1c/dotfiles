@@ -1,0 +1,41 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "/home/eric/.config/fastfetch/logo.txt",
+    "padding": {
+      "top": 1,
+      "left": 1
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host-disabled",
+    "kernel-disabled",
+    "uptime",
+    "packages-disabled",
+    "shell-disabled",
+    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme-disabled",
+    "icons-disabled",
+    "font-disabled",
+    "cursor-disabled",
+    "terminal-disabled",
+    "terminalfont-disabled",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "localip-disabled",
+    "battery-disabled",
+    "poweradapter-disabled",
+    "locale-disabled",
+    "break-disabled",
+    "colors"
+  ]
+}

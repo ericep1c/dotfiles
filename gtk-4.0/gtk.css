@@ -1,0 +1,126 @@
+/* GTK4 general styling - Template for wallust */
+
+@define-color foreground #BBE9F5;
+@define-color background #000102;
+@define-color cursor #92BFCA;
+
+@define-color color0 #000202;
+@define-color color1 #3D4D52;
+@define-color color2 #55757E;
+@define-color color3 #58818B;
+@define-color color4 #69949F;
+@define-color color5 #69949F;
+@define-color color6 #94C1CC;
+@define-color color7 #B1E0EB;
+@define-color color8 #69959F;
+@define-color color9 #3D4D52;
+@define-color color10 #55757E;
+@define-color color11 #58818B;
+@define-color color12 #69949F;
+@define-color color13 #69949F;
+@define-color color14 #94C1CC;
+@define-color color15 #D0E7EC;
+
+/* Map wallust colors to Libadwaita/GTK4 variables */
+@define-color accent_color @color4;
+@define-color accent_bg_color @color4;
+@define-color accent_fg_color @background;
+
+/* Exact kitty background tint with transparency */
+@define-color window_bg_color alpha(#000102, 0.8);
+@define-color window_fg_color @foreground;
+
+@define-color headerbar_bg_color transparent;
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_border_color alpha(@color4, 0.3);
+
+/* Buttons/Cards background */
+@define-color card_bg_color alpha(@color0, 0.5);
+@define-color card_fg_color @foreground;
+
+@define-color popover_bg_color alpha(@color0, 0.9);
+@define-color popover_fg_color @foreground;
+
+/* Sidebar styling - Darker to fit wallust */
+@define-color sidebar_bg_color #000202; 
+@define-color sidebar_fg_color @foreground;
+
+/* Rounded corners for the application window */
+window.main {
+    border-radius: 24px;
+    border: 2px solid @color4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the headerbar */
+headerbar {
+    background-color: transparent !important;
+    border-bottom: 1px solid alpha(@color4, 0.3);
+    padding: 6px;
+}
+
+/* Main window background */
+window, dialog, .background, stack {
+    background-color: @window_bg_color;
+}
+
+/* 
+   FORCE DARK SIDEBAR 
+   We target multiple possible classes used by Libadwaita/GTK4 
+*/
+.navigation-sidebar, 
+sidebar, 
+stack > box > scrolledwindow > viewport,
+stack > box > list,
+.sidebar,
+splitview > list {
+    background-color: @sidebar_bg_color !important;
+    background: @sidebar_bg_color !important;
+    color: @sidebar_fg_color !important;
+}
+
+/* Target the container of the sidebar specifically */
+splitview > box:first-child {
+    background-color: @sidebar_bg_color !important;
+}
+
+/* Sidebar lists and viewports */
+.navigation-sidebar list,
+.navigation-sidebar viewport,
+scrolledwindow.sidebar-scrolled {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Sidebar rows */
+.navigation-sidebar row,
+sidebar row,
+.sidebar row {
+    color: alpha(@foreground, 0.7) !important;
+    padding: 10px;
+    margin: 2px 8px;
+    border-radius: 10px;
+    background-color: transparent !important;
+}
+
+.navigation-sidebar row:selected,
+sidebar row:selected {
+    background-color: alpha(@color4, 0.4) !important;
+    color: @foreground !important;
+}
+
+.navigation-sidebar row:hover:not(:selected) {
+    background-color: alpha(@color4, 0.15) !important;
+}
+
+/* Popovers */
+popover, .popover, popover > contents {
+    background-color: @popover_bg_color !important;
+    border-radius: 12px;
+    border: 1px solid alpha(@color4, 0.3);
+}
+
+/* Ensure Loupe uses these colors specifically */
+loupe-window {
+    background-color: @background;
+}
