@@ -1,0 +1,70 @@
+[manager]
+ratio          = [ 1, 3, 4 ]
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+
+[preview]
+tab_size        = 2
+max_width       = 1000
+max_height      = 1500
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 90
+sixel_fraction  = 15
+ueberzug_scale  = 1
+ueberzug_offset = [ 0, 0, 0, 0 ]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', block = true, for = "unix" },
+]
+view = [
+	{ run = 'bat --paging=always "$@"', block = true, desc = "View", for = "unix" },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open", for = "unix" },
+]
+reveal = [
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Reveal", for = "unix" },
+]
+pdf = [
+	{ run = 'zathura "$@"', desc = "Zathura", for = "unix" },
+]
+audio = [
+	{ run = 'vlc "$@"', desc = "VLC", for = "unix" },
+]
+
+[open]
+rules = [
+	{ mime = "inode/directory", use = [ "edit", "open", "reveal" ] },
+	{ mime = "text/*", use = [ "view", "edit", "reveal" ] },
+	{ mime = "inode/x-empty", use = [ "edit", "view", "reveal" ] },
+	{ mime = "application/json", use = [ "view", "edit", "reveal" ] },
+	{ mime = "application/pdf", use = [ "pdf", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "video/*", use = [ "open", "reveal" ] },
+	{ mime = "audio/*", use = [ "audio", "reveal" ] },
+	{ mime = "application/zip", use = [ "reveal" ] },
+	{ mime = "application/x-tar", use = [ "reveal" ] },
+	{ mime = "application/x-bzip2", use = [ "reveal" ] },
+	{ mime = "application/x-7z-compressed", use = [ "reveal" ] },
+	{ mime = "application/x-rar", use = [ "reveal" ] },
+	{ mime = "application/x-xz", use = [ "reveal" ] },
+	{ mime = "*", use = [ "open", "reveal" ] },
+]
+
+[tasks]
+micro_workers    = 10
+macro_workers    = 25
+bizarre_retry    = 5
+image_alloc      = 10485760 # 10MB
+image_bound      = [ 0, 0, 16384, 16384 ]
+suppress_preload = false
+
+[plugin]
+
+[input]

@@ -1,0 +1,61 @@
+@import url("colors.css");
+
+window {
+    margin: 0px;
+    border: 2px solid @color4;
+    background-color: alpha(@background, 0.8);
+    border-radius: 30px;
+    font-family: "MesloLGS Nerd Font";
+}
+
+#outer-box {
+    margin: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+#input {
+    margin: 10px 40px 20px 40px;
+    padding: 12px 25px;
+    border: 2px solid @foreground;
+    color: @foreground;
+    background-color: alpha(@color0, 0.4);
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+#inner-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 0px;
+    border: none;
+    color: transparent;
+    font-size: 0px;
+}
+
+#entry {
+    margin: 10px;
+    padding: 0px;
+    border-radius: 15px;
+    background-color: alpha(@color0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+#entry:selected {
+    background-color: alpha(@color4, 0.3);
+    border: 3px solid #ffffff; 
+}
+
+#img {
+    margin: 0px;
+    border-radius: 15px;
+}

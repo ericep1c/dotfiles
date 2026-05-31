@@ -1,0 +1,59 @@
+[manager]
+cwd = { fg = "#69949F" }
+
+# Status line
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#69959F", bg = "#69959F" }
+
+# Progress bar
+[progress]
+gauge    = { fg = "#69949F", bg = "#69959F" }
+label    = { fg = "#D0E7EC", bold = true }
+
+# Selection
+[selection]
+style = { bg = "#69949F" }
+
+# Input
+[input]
+border   = { fg = "#69949F" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# Completion
+[completion]
+border   = { fg = "#69949F" }
+active   = { bg = "#69949F" }
+inactive = {}
+
+# Tasks
+[tasks]
+border  = { fg = "#69949F" }
+title   = {}
+value   = {}
+
+# Which
+[which]
+mask            = { bg = "#000202" }
+cand            = { fg = "#94C1CC" }
+rest            = { fg = "#69959F" }
+desc            = { fg = "#69949F" }
+separator       = " ➜ "
+separator_style = { fg = "#69959F" }
+
+# Help
+[help]
+on      = { fg = "#55757E" }
+run     = { fg = "#69949F" }
+desc    = { fg = "#69959F" }
+hovered = { bg = "#69949F", bold = true }
+footer  = { fg = "#D0E7EC", bg = "#000202" }
+
+# File-specific styles
+[filetree]
+# This is for the file list itself
+[filetree.items]
+# You can add more specific colors here if needed

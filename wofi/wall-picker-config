@@ -1,0 +1,12 @@
+width=1200
+height=700
+location=bottom
+columns=3
+image_size=320
+allow_images=true
+insensitive=true
+prompt=Search Wallpapers...
+cache_file=/dev/null
+hide_scroll=true
+# Use the new style
+style=/home/eric/.config/wofi/wall-picker.css

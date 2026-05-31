@@ -1,0 +1,65 @@
+@import "colors.css";
+
+window {
+    margin: 0px;
+    border: 2px solid @color4; /* Matching the primary active border color */
+    /* Note: Wofi doesn't natively support gradient borders in the same way as Hyprland, so we use the primary accent */
+    background-color: alpha(@background, 0.5); /* Matching swaync's control-center tint */
+    border-radius: 24px;
+    font-family: "MesloLGS Nerd Font";
+    font-size: 16px;
+}
+
+#outer-box {
+    margin: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+#input {
+    margin: 0px 0px 20px 0px;
+    padding: 10px; /* Keeping the same height */
+    border: 1px solid alpha(@foreground, 0.3);
+    color: @foreground;
+    background-color: alpha(@color0, 0.3);
+    border-radius: 12px;
+}
+
+#inner-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 10px;
+    border: none;
+    color: @foreground;
+}
+
+#entry {
+    margin: 5px 0px;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+#entry:selected {
+    background-color: alpha(@foreground, 0.2); /* Increased opacity for more contrast */
+    border: 2px solid @color4; /* Thicker, more noticeable outline */
+    border-radius: 12px;
+}
+
+#text:selected {
+    color: @color4; /* Using a wallust color for the selected text highlight */
+    font-weight: bold;
+}
+
+#img {
+    margin-left: 10px;
+    margin-right: 10px;
+}

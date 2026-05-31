@@ -1,0 +1,67 @@
+/**
+ * @name Discord+
+ * @author PlusInsta
+ * @authorId 309931975102300160
+ * @authorLink https://plusinsta.xyz
+ * @version 3.4.1
+ * @description A sleek, customizable Discord theme.
+ * @donate https://ko-fi.com/plusinsta
+ * @website https://plusinsta.github.io/discord-plus
+ * @source https://github.com/PlusInsta/discord-plus/tree/master/src
+ * @updateUrl https://plusinsta.github.io/discord-plus/DiscordPlus.theme.css
+ * @invite 2Jwh2nS
+*/
+@import url('https://plusinsta.github.io/discord-plus/src/DiscordPlus-source.theme.css');
+
+.theme-dark {
+  --dplus-backdrop: url('file:///home/eric/.cache/current_wallpaper.jpg');
+  
+  --dplus-accent-color-hue: {{color4.h}};
+  --dplus-accent-color-saturation: {{color4.s}}%;
+  --dplus-accent-color-lightness: {{color4.l}}%;
+
+  --dplus-foreground-color-hue-base: {{foreground.h}};
+  --dplus-foreground-color-hue-links: {{color4.h}};
+  --dplus-foreground-color-saturation-amount: 1;
+  --dplus-foreground-color-lightness-amount: 1;
+  
+  --dplus-background-color-hue: {{background.h}};
+  --dplus-background-color-saturation-amount: 1;
+  --dplus-background-color-lightness-amount: 1;
+  --dplus-background-color-alpha: 0.8;
+}
+
+.theme-light {
+  --dplus-backdrop: url('file:///home/eric/.cache/current_wallpaper.jpg');
+
+  --dplus-accent-color-hue: {{color4.h}};
+  --dplus-accent-color-saturation: {{color4.s}}%;
+  --dplus-accent-color-lightness: {{color4.l}}%;
+
+  --dplus-foreground-color-hue-base: {{foreground.h}};
+  --dplus-foreground-color-hue-links: {{color4.h}};
+  --dplus-foreground-color-saturation-amount: 1;
+  --dplus-foreground-color-lightness-amount: 1;
+
+  --dplus-background-color-hue: {{background.h}};
+  --dplus-background-color-saturation-amount: 1;
+  --dplus-background-color-lightness-amount: 1;
+  --dplus-background-color-alpha: 0.8;
+}
+
+:root {
+  --dplus-font-ui: 'Poppins';
+  --dplus-font-body: 'Roboto';
+  --dplus-font-header: 'Righteous';
+
+  --dplus-radius-ui: 10px;
+  --dplus-radius-avatar: 20%;
+  --dplus-radius-server: 20%;
+
+  --dplus-spacing-ui: 10px;
+  --dplus-spacing-app: 10px;
+
+  --dplus-icon-avatar-chat: 64px;
+  --dplus-icon-avatar-list: 32px;
+  --dplus-icon-avatar-profile: 80px;
+}

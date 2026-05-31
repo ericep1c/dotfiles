@@ -1,0 +1,122 @@
+[manager]
+ratio          = [ 1, 3, 4 ]
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+
+[preview]
+tab_size        = 2
+max_width       = 1000
+max_height      = 1500
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 90
+sixel_fraction  = 15
+ueberzug_scale  = 1
+ueberzug_offset = [ 0, 0, 0, 0 ]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', block = true, for = "unix" },
+]
+view = [
+	{ run = 'bat --paging=always "$@"', block = true, desc = "View", for = "unix" },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open", for = "unix" },
+]
+reveal = [
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Reveal", for = "unix" },
+]
+pdf = [
+	{ run = 'zathura "$@"', desc = "Zathura", for = "unix" },
+]
+audio = [
+	{ run = 'vlc "$@"', desc = "VLC", for = "unix" },
+]
+
+[open]
+rules = [
+	{ name = "*/", use = [ "edit", "view", "open", "reveal" ] },
+	# Text files by extension
+	{ name = "*.txt", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.conf", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.json", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.jsonc", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.css", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.toml", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.yaml", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.yml", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.md", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.sh", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.py", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.js", use = [ "view", "edit", "reveal" ] },
+	{ name = "*.ts", use = [ "view", "edit", "reveal" ] },
+	# General text mime type catch-all
+	{ mime = "text/*", use = [ "view", "edit", "reveal" ] },
+	{ mime = "inode/x-empty", use = [ "edit", "view", "reveal" ] },
+	{ mime = "application/json", use = [ "view", "edit", "reveal" ] },
+	{ mime = "application/pdf", use = [ "pdf", "reveal" ] },
+	# Media and others
+	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "video/*", use = [ "open", "reveal" ] },
+	{ mime = "audio/*", use = [ "audio", "reveal" ] },
+	{ mime = "application/zip", use = [ "reveal" ] },
+	{ mime = "application/x-tar", use = [ "reveal" ] },
+	{ mime = "application/x-bzip2", use = [ "reveal" ] },
+	{ mime = "application/x-7z-compressed", use = [ "reveal" ] },
+	{ mime = "application/x-rar", use = [ "reveal" ] },
+	{ mime = "application/x-xz", use = [ "reveal" ] },
+]
+
+[tasks]
+micro_workers    = 10
+macro_workers    = 25
+bizarre_retry    = 5
+image_alloc      = 10485760 # 10MB
+image_bound      = [ 0, 0, 16384, 16384 ]
+suppress_preload = false
+
+[plugin]
+fetchers = [
+	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+]
+preloaders = [
+	# Image
+	{ mime = "image/vnd.djvu", run = "magick" },
+	{ mime = "image/*",        run = "magick" },
+	# Video
+	{ mime = "video/*",        run = "video" },
+	# PDF
+	{ mime = "application/pdf", run = "pdf" },
+]
+previewers = [
+	{ name = "*/",             run = "folder", sync = true },
+	# Code
+	{ mime = "text/*",         run = "code" },
+	{ mime = "*/xml",          run = "code" },
+	{ mime = "*/javascript",   run = "code" },
+	{ mime = "*/x-wine-extension-ini", run = "code" },
+	# JSON
+	{ mime = "application/json", run = "json" },
+	# Image
+	{ mime = "image/vnd.djvu", run = "noop" },
+	{ mime = "image/*",        run = "image" },
+	# Video
+	{ mime = "video/*",        run = "video" },
+	# PDF
+	{ mime = "application/pdf", run = "pdf" },
+	# Archive
+	{ mime = "application/zip", run = "archive" },
+	{ mime = "application/x-tar", run = "archive" },
+	{ mime = "application/x-bzip2", run = "archive" },
+	{ mime = "application/x-7z-compressed", run = "archive" },
+	{ mime = "application/x-rar", run = "archive" },
+	{ mime = "application/x-xz", run = "archive" },
+]
+
+[input]
+# ... (standard input settings)

@@ -1,0 +1,62 @@
+/**
+ * @name KittyStyle
+ * @author Gemini CLI
+ * @version 1.2.0
+ * @description A transparent theme with improved menu readability.
+*/
+
+:root {
+    --text-normal: {{foreground}} !important;
+    --header-primary: {{foreground}} !important;
+    --channel-default: {{color7}} !important;
+    --interactive-normal: {{color7}} !important;
+    --interactive-hover: {{foreground}} !important;
+    --interactive-active: #FFFFFF !important;
+    --background-modifier-selected: {{color4}}33 !important;
+}
+
+/* Base transparency for main chat */
+#app-mount,
+.app-2CXK3s,
+.bg-1Q_j13,
+.container-2cd8Mz,
+.main-2gi44f,
+.container-16j22k,
+.base-2jDfRb,
+.sidebar-1tnWFu,
+.chat-2Z1YCH,
+.content-1jSziY,
+.container-3w7J-x,
+.panels-3wP_P7,
+.privateChannels-oP9P9S {
+    background: transparent !important;
+}
+
+/* ROOT Window Tint */
+body {
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* FIX: Make Settings and Full-Screen Layers Opaque to hide underlying text */
+.layer-86YKbF {
+    background: {{background}} !important; /* Fully opaque background for layers */
+}
+
+.standardSidebarView-E9Pc3z,
+.contentRegion-3Hkf9n,
+.sidebarRegion-1VBTMm {
+    background: {{background}} !important;
+}
+
+/* Keep the sidebar and chat tinted but readable */
+.guilds-2J7N97 { background: rgba(0, 0, 0, 0.2) !important; }
+.members-3WRCEx, .members-3WRCEx > div { background: transparent !important; }
+
+/* Popouts (User profiles, context menus) */
+.userPopout-2jS13m,
+.menu-1QAB_0 {
+    background: {{background}} !important;
+    border: 1px solid {{color4}} !important;
+}
+
+.scrollableContainer-15eg7h { background: rgba(255, 255, 255, 0.05) !important; }

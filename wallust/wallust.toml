@@ -1,0 +1,34 @@
+# wallust v3.5
+
+# How the image is parse, in order to get the colors:
+backend = "kmeans"
+
+# What color space to use to produce and select the most prominent colors:
+color_space = "labmixed"
+
+# Use the most prominent colors in a way that makes sense, a scheme color palette:
+palette = "saliencedark"
+
+# Ensures a "readable contrast"
+check_contrast = true
+
+[templates]
+spicetify = { template = "text-color.ini", target = "~/.config/spicetify/Themes/text/color.ini" }
+kitty = { template = 'kitty.conf', target = '~/.config/kitty/colors.conf' }
+hyprland = { template = 'hyprland-colors.conf', target = '~/.config/hypr/wallust-colors.conf' }
+wofi = { template = 'wofi-colors.css', target = '~/.config/wofi/colors.css' }
+waybar = { template = 'waybar.css', target = '~/.config/waybar/colors.css' }
+swaync = { template = 'swaync.css', target = '~/.config/swaync/colors/colors.css' }
+gtk4 = { template = 'gtk4.css', target = '~/.config/gtk-4.0/gtk.css' }
+yazi = { template = 'yazi.toml', target = '~/.config/yazi/theme.toml' }
+zathura = { template = 'zathurarc', target = '~/.config/zathura/zathurarc' }
+btop = { template = 'btop.theme', target = '~/.config/btop/themes/wallust.theme' }
+vesktop = { template = 'vesktop.css', target = '~/.config/vesktop/themes/KittyStyle.theme.css' }
+discord_plus = { template = 'discord_plus.css', target = '~/.config/vesktop/themes/DiscordPlus.theme.css' }
+
+[hooks]
+update_spicetify = "sh -c 'if hyprctl clients | grep -iq \"class: spotify\"; then spicetify apply; else spicetify apply -n; fi'"
+# You can add hooks here, but keep in mind they might not receive the image path as an argument depending on the wallust version.
+# Example:
+update_waybar = "pkill -USR2 waybar"
+reload_swaync = "swaync-client -R && swaync-client -rs"

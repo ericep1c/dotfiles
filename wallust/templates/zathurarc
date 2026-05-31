@@ -1,0 +1,40 @@
+set notification-error-bg       "{{color1}}"
+set notification-error-fg       "{{foreground}}"
+set notification-warning-bg     "{{color1}}"
+set notification-warning-fg     "{{foreground}}"
+set notification-bg             "{{background}}"
+set notification-fg             "{{color12}}"
+
+set completion-bg               "{{background}}"
+set completion-fg               "{{color12}}"
+set completion-group-bg         "{{background}}"
+set completion-group-fg         "{{color12}}"
+set completion-highlight-bg     "{{color12}}"
+set completion-highlight-fg     "{{background}}"
+
+set index-bg                    "{{background}}"
+set index-fg                    "{{color12}}"
+set index-active-bg             "{{color12}}"
+set index-active-fg             "{{background}}"
+
+set inputbar-bg                 "{{background}}"
+set inputbar-fg                 "{{foreground}}"
+set statusbar-bg                "{{background}}"
+set statusbar-fg                "{{foreground}}"
+
+set highlight-color             "{{color1}}"
+set highlight-active-color      "{{color12}}"
+
+set default-bg                  "{{background}}"
+set default-fg                  "{{foreground}}"
+
+set render-loading              true
+set render-loading-fg           "{{background}}"
+set render-loading-bg           "{{foreground}}"
+
+# Recolor mode settings
+set recolor                     true
+set recolor-lightcolor          "{{background}}"
+set recolor-darkcolor           "{{foreground}}"
+
+set selection-clipboard         clipboard

@@ -1,0 +1,235 @@
+@import "/home/eric/.config/waybar/colors.css";
+
+* {
+  border: none;
+  border-radius: 1;
+  min-height: 0;
+  font-family: 'MesloLGS Nerd Font';
+  font-size: 12px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0.58);
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 32px;
+  color: @foreground;  
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+#workspaces {
+    padding: 0px 5px;
+    margin: 3.5 3.5px;
+    border-radius: 11px;
+    background-color: alpha(@color1, 0.2);
+    opacity: 0.95;
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  color: alpha(@foreground, 0.5);
+}
+
+#workspaces button.active {
+  transition: all 50ms ease-out;
+  border-radius: 18px;
+  color: @background;
+  background: @color2;
+  opacity: 0.9;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  padding-right: 7px;
+  padding-left: 4px;
+}
+
+#workspaces button.active:hover {
+  background-color: alpha(@color2, 0.8);
+  color: @foreground;
+} 
+
+#workspaces button:hover {
+  background-color: transparent;
+}
+
+#workspaces button.empty:hover {
+  border-radius: 18px;
+  background: transparent;
+  opacity: 1;
+}
+
+#battery { color: @color6; }
+#pulseaudio { color: @color4; }
+#network { color: @color5; }
+#bluetooth { color: @color3; }
+#cpu { color: @color2; }
+#memory { color: @color3; }
+#clock {
+  color: @color7;
+  font-size: 13px;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+#custom-update { color: @color8; }
+#custom-power { color: @color1; }
+
+#battery,
+#pulseaudio,
+#custom-screenrecording-indicator,
+#custom-update,
+#custom-power {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#tray {
+  background:alpha(@foreground, 0.0);
+  border-radius: 16px;
+  padding: 0px 5px;
+  margin: 3.5 2px;
+  margin-right: 4px;
+}
+
+#pulseaudio {
+  margin-right: 5px;
+}
+
+#bluetooth {
+  margin-right: 12px;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
+}
+
+#network {
+  margin-right: 9px;
+}
+
+#custom-gamemode {
+  margin-right: 6px;
+  color: @color2;
+}
+
+tooltip {
+  background: @background;
+  border: 1px solid alpha(@foreground, 0.2);
+  border-radius: 4px 4px 11px 11px;
+}
+tooltip label {
+  color: @foreground;
+}
+
+
+#custom-active_window {
+    padding: 3px 6px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: @foreground;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #fcd4d4;
+}
+
+#custom-toggle_2nd_bar {
+  background:alpha(@color1, 0.2);
+  color: @foreground;
+  border-radius: 99px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: -2px;
+  margin-right: 6px;
+  padding-right: 12px;
+  padding-left: 7px;
+}
+
+#custom-todo {
+  background:alpha(@color1, 0.2);
+  color: @foreground;
+  border-radius: 99px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: -3px;
+  margin-right: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#cpu, #memory {
+    font-size: 18px;      
+    padding: 2px 1px;
+}
+
+#group-right1,
+#group_right1,
+#right1 {
+    font-weight: 800;
+    background: transparent;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
+
+#group-center3,
+#group_center3,
+#center3 {
+    font-weight: 800;
+    background:alpha(@color2, 0.1);
+    border-radius: 12px;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
+
+#group-center2,
+#group_center2,
+#center2 {
+    font-weight: 800;
+    background:alpha(@color3, 0.1);
+    border-radius: 12px;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}

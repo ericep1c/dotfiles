@@ -1,0 +1,78 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "29510d99aa36b01f95a5689f9ec5b4b34f53b7a5314e10223d25316c50b9c484",
+    "telemetry.devDeviceId": "4dfcf28e-9fe6-4fec-a570-3d297d669f66",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/eric/.config"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/eric/.config": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#000000",
+    "windowSplash": {
+        "zoomLevel": 1,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#787c99",
+            "background": "#000000",
+            "editorBackground": "#000000",
+            "titleBarBackground": "#000000",
+            "titleBarBorder": "#101014",
+            "activityBarBackground": "#000000",
+            "activityBarBorder": "#08080b",
+            "sideBarBackground": "#000000",
+            "sideBarBorder": "#101014",
+            "statusBarBackground": "#000000",
+            "statusBarBorder": "#101014",
+            "statusBarNoFolderBackground": "#08080b",
+            "windowBorder": "#0d0f17"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": true
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "1d6fd367e19e3e2d67a8f130a2c78fff": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/eric/.config",
+            "backupPath": "/home/eric/.config/VSCodium/Backups/969bb65dfb537e8e550629cb782918e3",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1273,
+                "height": 1392
+            }
+        },
+        "openedWindows": []
+    }
+}
